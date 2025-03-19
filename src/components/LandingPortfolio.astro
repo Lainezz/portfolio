@@ -1,0 +1,40 @@
+---
+// SCSS
+const theme = "./src/styles/main-grid-dark.scss";
+import "../styles/global.scss";
+import "../styles/tailwind.css";
+
+// IMAGES
+import { Picture } from "astro:assets";
+import linkedin from "../assets/images/linkedin.svg";
+import github from "../assets/images/github.svg";
+import instagram from "../assets/images/instagram.svg";
+import x from "../assets/images/x.svg";
+import twitch from "../assets/images/twitch.svg";
+import viewnext from "../assets/images/viewnext.png";
+import junta_andalucia from "../assets/images/junta_andalucia.svg";
+import ec from "../assets/images/european_commission.svg";
+import ual from "../assets/images/ual.png";
+import ugr from "../assets/images/ugr.svg";
+---
+
+<link slot="grid_theme_scss" id="grid_theme_scss" rel="stylesheet" href={theme}>
+
+<main class="main__grid">
+    <section class="grid__bio">
+        <strong>HOLA</strong>
+    </section>
+    <section class="grid__socials"></section>
+    <section id="grid__funct_1" class="grid__funct_1"></section>
+    <section class="grid__hobbies"></section>
+    <section id="grid__funct_2" class="grid__funct_2"></section>
+    <section class="grid__techs"></section>
+    <section class="grid__lang"></section>
+    <section class="grid__experience"></section>
+    <section id="grid__funct_3" class="grid__funct_3"></section>
+    <section id="grid__funct_4" class="grid__funct_4"></section>
+    <section class="grid__footer"></section>
+    <section class="grid__cc"></section>
+</main>
+
+<script client:only src="./src/js/change-style.js"></script>

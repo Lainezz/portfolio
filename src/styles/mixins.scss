@@ -1,0 +1,125 @@
+@use './variables.scss' as *;
+@use "sass:math";
+@use "sass:list";
+
+// GRID ELEMENT
+@mixin create_grid_element($st_column, $end_column, $st_row, $end_row) {
+    grid-column-start: $st_column;
+    grid-column-end: $end_column;
+    grid-row-start: $st_row;
+    grid-row-end: $end_row;
+
+    border-radius: 16px;
+    padding: 1em;
+}
+
+// WHITE GRID
+@mixin create_funct_white_grid_element($st_column, $end_column, $st_row, $end_row) {
+    @include create_white_grid_element($st_column, $end_column, $st_row, $end_row);
+    cursor: pointer;
+}
+@mixin create_white_grid_element($st_column, $end_column, $st_row, $end_row) {
+    @include create_grid_element($st_column, $end_column, $st_row, $end_row);
+    border: 1px solid $base-color-black-1;
+    background-color: random-white-color();
+}
+
+// BLACK GRID
+@mixin create_funct_black_grid_element($st_column, $end_column, $st_row, $end_row) {
+    @include create_black_grid_element($st_column, $end_column, $st_row, $end_row);
+    cursor: pointer;
+}
+@mixin create_black_grid_element($st_column, $end_column, $st_row, $end_row) {
+    @include create_grid_element($st_column, $end_column, $st_row, $end_row);
+    border: 1px solid $base-color-snow;
+    background-color: random-black-color();
+}
+
+// COLORFUL DIV
+@mixin create_funct_colorful_grid_element($st_column, $end_column, $st_row, $end_row) {
+    @include create_colorful_grid_element($st_column, $end_column, $st_row, $end_row);
+    cursor: pointer;
+}
+@mixin create_colorful_grid_element($st_column, $end_column, $st_row, $end_row) {
+    @include create_grid_element($st_column, $end_column, $st_row, $end_row);
+    border: 1px solid $base-color-black-1;
+    background-color: random-color();
+}
+
+// STRIPED GRID
+@mixin create_striped_grid_element($st_column, $end_column, $st_row, $end_row) {
+    
+    @include create_grid_element($st_column, $end_column, $st_row, $end_row);
+
+    $color1: random-color();
+    $color2: random-color();
+    $color3: random-color();
+    $color4: random-color();
+    $color5: random-color();
+    $color6: random-color();
+    $color7: random-color();
+    $color8: random-color();
+    $color9: random-color();
+
+    border: 1px solid $base-color-black-1;
+    background: repeating-linear-gradient(
+        135deg,
+        $color1,
+        $color1 10px,
+        $color2 10px,
+        $color2 20px,
+        $color3 20px,
+        $color3 30px,
+        $color4 30px,
+        $color4 40px,
+        $color5 40px,
+        $color5 50px,
+        $color6 50px,
+        $color6 60px,
+        $color7 60px,
+        $color7 70px,
+        $color8 70px,
+        $color8 80px,
+        $color9 80px,
+        $color9 90px,
+    );
+    cursor: pointer;
+}
+
+@function random-color() {
+    $colors: (
+        $base-color-dark-blue,
+        $base-color-blue-trust,
+        $base-color-orange,
+        $base-color-yellow,
+        $base-color-green,
+        $base-color-blgr,
+        $base-color-gray,
+        $base-color-purple
+    );
+
+    $rd: math.random(list.length($colors)); // Genera un número entre 1 y 8
+    @return list.nth($colors, $rd);
+}
+
+@function random-black-color() {
+    $colors: (
+        $base-color-black-1,
+        $base-color-black-2,
+        $base-color-black-3
+    );
+
+    $rd: math.random(list.length($colors)); // Genera un número entre 1 y 8
+    @return list.nth($colors, $rd);
+}
+
+@function random-white-color() {
+    $colors: (
+        $base-color-snow,
+        $base-color-off-white,
+        $base-color-light-gray
+    );
+
+    $rd: math.random(list.length($colors)); // Genera un número entre 1 y 8
+    @return list.nth($colors, $rd);
+}

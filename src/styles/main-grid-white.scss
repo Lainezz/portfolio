@@ -1,0 +1,69 @@
+@use "./global.scss" as *; // Import global variables
+
+*,
+*::before,
+*::after {
+    color: $base-color-black-1;
+}
+
+body {
+    background-color: $base-color-black-3;
+}
+
+.main__grid {
+
+    height: 100vh;
+    padding: 1em;
+
+    display: grid;
+    grid-template-columns: 0.25fr repeat(3, 1fr) 0.25fr 1fr 1fr 1fr 0.3fr; // 9
+    grid-template-rows: 0.4fr 0.25fr 0.25fr repeat(3, 1fr) 0.25fr 0.4fr; // 8
+
+    column-gap: 1em;
+    row-gap: 1em;
+
+    justify-items: stretch;
+    align-items: stretch;
+
+    justify-content: stretch;
+    align-content: stretch;
+
+    .grid__bio {
+        @include create_white_grid_element(1, 5, 1, 5)
+    }
+    .grid__socials {
+        @include create_white_grid_element(5, 10, 1, 2)
+    }
+    .grid__funct_1 {
+        @include create_striped_grid_element(1, 2, 5, 8)
+    }
+    .grid__hobbies {
+        @include create_white_grid_element(2, 5, 5, 8)
+    }
+    .grid__funct_2 {
+        @include create_funct_white_grid_element(5, 7, 2, 3)
+    }
+    .grid__techs {
+        @include create_white_grid_element(5, 7, 3, 6)
+    }
+    .grid__lang {
+        @include create_white_grid_element(5, 7, 6, 8)
+    }
+    .grid__experience {
+        @include create_white_grid_element(7, 9, 2, 9)
+    }
+    .grid__funct_3 {
+        @include create_funct_white_grid_element(9, 10, 2, 5)
+    }
+    .grid__funct_4 {
+        @include create_funct_white_grid_element(9, 10, 5, 8)
+    }
+    .grid__footer {
+        @include create_white_grid_element(1, 7, 8, 9)
+    }
+    .grid__cc {
+        @include create_white_grid_element(9, 10, 8, 9)
+    }
+
+
+}
