@@ -1,0 +1,16 @@
+@mixin grid__socials() {
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .socials__icon {
+        width: 3em;
+        height: auto;
+    }
+
+}
+
+.display_none {
+    display: none;
+}

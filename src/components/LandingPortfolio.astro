@@ -8,8 +8,10 @@ import "../styles/tailwind.css";
 import { Picture } from "astro:assets";
 import linkedin from "../assets/images/linkedin.svg";
 import github from "../assets/images/github.svg";
+import github_white from "../assets/images/github_white.svg";
 import instagram from "../assets/images/instagram.svg";
 import x from "../assets/images/x.svg";
+import x_white from "../assets/images/x_white.svg";
 import twitch from "../assets/images/twitch.svg";
 import viewnext from "../assets/images/viewnext.png";
 import junta_andalucia from "../assets/images/junta_andalucia.svg";
@@ -24,7 +26,19 @@ import ugr from "../assets/images/ugr.svg";
     <section class="grid__bio">
         <strong>HOLA</strong>
     </section>
-    <section class="grid__socials"></section>
+    <section class="grid__socials">
+        <Picture src={linkedin} alt="LinkedIn" class="socials__icon" />
+        <span>
+            <Picture src={github} id="github_black_logo" alt="GitHub" class="socials__icon" />
+            <Picture src={github_white} id="github_white_logo" alt="GitHub white" class="socials__icon display_none"/>
+        </span>
+        <Picture src={instagram} alt="Instagram" class="socials__icon" />
+        <span>
+            <Picture src={x} id="x_black_logo" alt="X" class="socials__icon" />
+            <Picture src={x_white} id="x_white_logo" alt="X" class="socials__icon display_none" />
+        </span>
+        <Picture src={twitch} alt="Twitch" class="socials__icon" />
+    </section>
     <section id="grid__funct_1" class="grid__funct_1"></section>
     <section class="grid__hobbies"></section>
     <section id="grid__funct_2" class="grid__funct_2"></section>

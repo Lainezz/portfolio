@@ -32,7 +32,8 @@ body {
         @include create_black_grid_element(1, 5, 1, 5)
     }
     .grid__socials {
-        @include create_black_grid_element(5, 10, 1, 2)
+        @include create_black_grid_element(5, 10, 1, 2);
+        @include grid__socials();
     }
     .grid__funct_1 {
         @include create_striped_grid_element(1, 2, 5, 8)

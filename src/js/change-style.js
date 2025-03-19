@@ -1,8 +1,16 @@
 window.onload = function () {
-    var portfolioBody = document.querySelector("#landing_portfolio__body");
+    
+    // SELECT THE BODY
+    let portfolioBody = document.querySelector("#landing_portfolio__body");
     if(!portfolioBody) {
         portfolioBody = document.querySelector("body");
     }
+
+    // SELECT THE GITHUB ICON
+    let githubBlackIcon = document.querySelector("#github_black_logo");
+    let githubWhiteIcon = document.querySelector("#github_white_logo");
+    let xBlackIcon = document.querySelector("#x_black_logo");
+    let xWhiteIcon = document.querySelector("#x_white_logo");
     
     // COLORFUL THEME
     const sectionFunct1 = document.querySelector("#grid__funct_1");
@@ -18,6 +26,11 @@ window.onload = function () {
                 if(portfolioBody.hasAttribute("style")) {
                     portfolioBody.removeAttribute("style")
                 }
+
+                if(githubBlackIcon.classList.contains("display_none")) githubBlackIcon.classList.remove("display_none")
+                if(!githubWhiteIcon.classList.contains("display_none")) githubWhiteIcon.classList.add("display_none")
+                if(xBlackIcon.classList.contains("display_none")) xBlackIcon.classList.remove("display_none")
+                if(!xWhiteIcon.classList.contains("display_none")) xWhiteIcon.classList.add("display_none")
             }
         });
     }
@@ -36,6 +49,13 @@ window.onload = function () {
                 if(portfolioBody.hasAttribute("style")) {
                     portfolioBody.removeAttribute("style")
                 }
+
+                if(githubBlackIcon.classList.contains("display_none")) githubBlackIcon.classList.remove("display_none")
+                if(!githubWhiteIcon.classList.contains("display_none")) githubWhiteIcon.classList.add("display_none")
+                if(xBlackIcon.classList.contains("display_none")) xBlackIcon.classList.remove("display_none")
+                if(!xWhiteIcon.classList.contains("display_none")) xWhiteIcon.classList.add("display_none")
+
+
             }
         });
     }
@@ -55,6 +75,12 @@ window.onload = function () {
                 if(portfolioBody.hasAttribute("style")) {
                     portfolioBody.removeAttribute("style")
                 }
+
+                
+                if(githubWhiteIcon.classList.contains("display_none")) githubWhiteIcon.classList.remove("display_none")
+                if(!githubBlackIcon.classList.contains("display_none")) githubBlackIcon.classList.add("display_none")
+                if(xWhiteIcon.classList.contains("display_none")) xWhiteIcon.classList.remove("display_none")
+                if(!xBlackIcon.classList.contains("display_none")) xBlackIcon.classList.add("display_none")
             }
         });
     }
