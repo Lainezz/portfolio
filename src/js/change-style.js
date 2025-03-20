@@ -1,5 +1,31 @@
-window.onload = function () {
+function getRandomColor() {
+    let colors = [
+        "#111111",
+        "#303030",
+        "#F5F5F5",
+        "#6997a5",
+        "#5a9eb9",
+        "#ff934b",
+        "#FCCA46",
+        "#ceffb2",
+        "#619B8A",
+        "#B1B1B1",
+        "#9f70b4"
+    ]
+    return colors[Math.floor(Math.random() * colors.length)];
+}
+
+function randomizeBackgroundStars() {
+    const stars = document.querySelectorAll(".star");
+
+    for(let star in stars) {
+        document.documentElement.style.setProperty("--primary-color", `${getRandomColor()}`);
+    }
     
+}
+
+
+function addEventListeners() {
     // SELECT THE BODY
     let portfolioBody = document.querySelector("#landing_portfolio__body");
     if(!portfolioBody) {
@@ -25,12 +51,14 @@ window.onload = function () {
 
                 if(portfolioBody.hasAttribute("style")) {
                     portfolioBody.removeAttribute("style")
-                }
+                } // this is because when I randomize the background color, to get it back to its normal state I have to delete the inline style that I put
 
                 if(githubBlackIcon.classList.contains("display_none")) githubBlackIcon.classList.remove("display_none")
                 if(!githubWhiteIcon.classList.contains("display_none")) githubWhiteIcon.classList.add("display_none")
                 if(xBlackIcon.classList.contains("display_none")) xBlackIcon.classList.remove("display_none")
                 if(!xWhiteIcon.classList.contains("display_none")) xWhiteIcon.classList.add("display_none")
+
+                randomizeBackgroundStars();
             }
         });
     }
@@ -48,14 +76,14 @@ window.onload = function () {
 
                 if(portfolioBody.hasAttribute("style")) {
                     portfolioBody.removeAttribute("style")
-                }
+                } // this is because when I randomize the background color, to get it back to its normal state I have to delete the inline style that I put
 
                 if(githubBlackIcon.classList.contains("display_none")) githubBlackIcon.classList.remove("display_none")
                 if(!githubWhiteIcon.classList.contains("display_none")) githubWhiteIcon.classList.add("display_none")
                 if(xBlackIcon.classList.contains("display_none")) xBlackIcon.classList.remove("display_none")
                 if(!xWhiteIcon.classList.contains("display_none")) xWhiteIcon.classList.add("display_none")
-
-
+                
+                randomizeBackgroundStars();
             }
         });
     }
@@ -74,13 +102,15 @@ window.onload = function () {
 
                 if(portfolioBody.hasAttribute("style")) {
                     portfolioBody.removeAttribute("style")
-                }
+                } // this is because when I randomize the background color, to get it back to its normal state I have to delete the inline style that I put
 
                 
                 if(githubWhiteIcon.classList.contains("display_none")) githubWhiteIcon.classList.remove("display_none")
                 if(!githubBlackIcon.classList.contains("display_none")) githubBlackIcon.classList.add("display_none")
                 if(xWhiteIcon.classList.contains("display_none")) xWhiteIcon.classList.remove("display_none")
                 if(!xBlackIcon.classList.contains("display_none")) xBlackIcon.classList.add("display_none")
+
+                randomizeBackgroundStars();
             }
         });
     }
@@ -89,28 +119,13 @@ window.onload = function () {
     const sectionFunct2 = document.querySelector("#grid__funct_2");
     if (sectionFunct2) {
         sectionFunct2.addEventListener("click", function () {
-            
-            let colors = [
-                "#111111",
-                "#222222",
-                "#303030",
-                "#f4f4f4",
-                "#F5F5F5",
-                "#F0F0F0",
-                "#6997a5",
-                "#5a9eb9",
-                "#ff934b",
-                "#FCCA46",
-                "#ceffb2",
-                "#619B8A",
-                "#B1B1B1",
-                "#9f70b4"
-            ]
-            
-            let nRandom = Math.floor(Math.random() * colors.length)
-            
-            portfolioBody.style.backgroundColor = colors[nRandom];
-            
+                        
+            portfolioBody.style.backgroundColor = getRandomColor();
+            randomizeBackgroundStars();
         });
     }
-};
+}
+
+
+
+window.onload = addEventListeners();

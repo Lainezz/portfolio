@@ -1,0 +1,12 @@
+*,
+*::before,
+*::after {
+    font-family: 'Fira Mono', 'Courier New', Courier, monospace;
+}
+
+// MIXIN for responsive design
+@mixin responsive($min-size) {
+    @media (min-width: $min-size) {
+        @content;
+    }
+}

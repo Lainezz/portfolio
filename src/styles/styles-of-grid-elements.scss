@@ -1,16 +1,66 @@
-@mixin grid__socials() {
+@use './general-purpose.scss' as *;
+@use './variables.scss' as *;
+
+@mixin grid__bio {
+    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+
+    .bio__info {
+
+        .info__desc {
+            max-width: 80%;
+            background-color: rgb(78, 45, 4);
+        }
+
+        .info__photo {
+            background-color: rgb(0, 61, 61);
+            width: 10em;
+            height: 10em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: absolute;
+            bottom: 1em;
+            right: 1em;
+
+            border-radius: 16px;
+        }
+    }
+
+}
+
+
+@mixin grid__socials {
 
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 
     .socials__icon {
-        width: 3em;
+        width: 2em;
         height: auto;
+
+        @include responsive($width-sm-desktop) {
+            width: 3em;
+            height: auto;
+        }
     }
 
 }
 
 .display_none {
     display: none;
+}
+
+@mixin grid__hobbies {
+    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+
 }

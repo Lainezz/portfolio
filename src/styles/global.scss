@@ -2,10 +2,7 @@
 @forward './variables.scss';
 @forward './mixins.scss';
 @forward './styles-of-grid-elements.scss';
+@forward './general-purpose.scss';
 @import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap');
 
-*,
-*::before,
-*::after {
-    font-family: 'Fira Mono', 'Courier New', Courier, monospace;
-}
+
