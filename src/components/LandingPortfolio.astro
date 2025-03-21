@@ -1,6 +1,7 @@
 ---
 // SCSS
-const theme = "./src/styles/main-grid-dark.scss";
+//import "../styles/main-grid-dark.scss";
+//import change_style from "../js/change-style.js";
 import "../styles/global.scss";
 import "../styles/tailwind.css";
 import "../styles/background-stars.scss";
@@ -21,12 +22,11 @@ import ual from "../assets/images/ual.png";
 import ugr from "../assets/images/ugr.svg";
 ---
 
-<link
-    slot="grid_theme_scss"
-    id="grid_theme_scss"
-    rel="stylesheet"
-    href={theme}
-/>
+
+
+<style lang="scss">
+    @use "../styles/main-grid-dark.scss";
+</style>
 
 <div slot="background_stars" class="stars">
     <div class="star"></div>
